@@ -3,12 +3,10 @@ package demolition;
 import processing.core.PImage;
 import processing.core.PApplet;
 
-//try to extend etc
 public class Map{
-    private int x;
-    private int y;
-    private int xVel;
 
+    public int x;
+    public int y;
     private PImage sprite;
 
     public Map(int x, int y, PImage sprite){
@@ -17,8 +15,15 @@ public class Map{
         this.sprite = sprite;
     }
 
-    public void tick(){
+    public void xIncrease(){
+        this.x += 32;
+    }
 
+    public void yIncrease(){
+        this.y += 32;
+    }
+
+    public void tick(){
     }
 
     public void draw(PApplet app){
