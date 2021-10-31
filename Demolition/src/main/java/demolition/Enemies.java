@@ -3,20 +3,13 @@ package demolition;
 import processing.core.PImage;
 import processing.core.PApplet;
 
-public class Enemies extends PApplet {
+public abstract class Enemies extends GameObject {
 
-    private int x;
-    private int y;
-    private int speedY;
-    private int speedX;
-    private int maxSpeed;
-    private PImage sprite;
-    //boolean left, right, up, down;
-    String s;
-    int width;
-    int height;
+    private String type;
 
-    public Enemies(int x , int y, PImage sprite){
+    public Enemies(int x , int y, PImage sprite, String type , int row, int col){
+        super();
+        
         this.x = x;
         this.y = y;
         this.sprite = sprite;
@@ -25,15 +18,11 @@ public class Enemies extends PApplet {
         this.speedY = 0;
         this.width = 480;
         this.height = 480;
-
+        this.type = type;
+        this.row = row;
+        this.col = col;
     }
 
-    public void tick(){
+    public abstract void tick();
 
-    }
-
-    public void draw(PApplet app) {
-        // handling graphics, just to draw sprites and no logic statements
-        app.image(this.sprite , this.x, this.y);
-    }
 }

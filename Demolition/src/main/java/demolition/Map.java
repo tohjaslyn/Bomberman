@@ -8,19 +8,19 @@ public class Map{
     public int x;
     public int y;
     private PImage sprite;
+    public String type;
+    public boolean canBreak;
+    public boolean canPlayerBeHere;
 
-    public Map(int x, int y, PImage sprite){
+    // I, P, W, B, E, G
+
+    public Map(int x, int y, PImage sprite, String type, boolean canBreak, boolean canPlayerBeHere){
         this.x = x;
         this.y = y;
         this.sprite = sprite;
-    }
-
-    public void xIncrease(){
-        this.x += 32;
-    }
-
-    public void yIncrease(){
-        this.y += 32;
+        this.type = type;
+        this.canBreak = canBreak;
+        this.canPlayerBeHere = canPlayerBeHere;
     }
 
     public void tick(){
